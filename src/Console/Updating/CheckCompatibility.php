@@ -3,17 +3,16 @@
  * @author      Peter Fox <peter.fox@peterfox.me>
  * @copyright   Peter Fox 2016
  *
- * @package     formally-app
+ * @package     hexavel-spark
  */
 
 namespace Hexavel\Spark\Console\Updating;
 
+use Hexavel\Spark\HexavelSparkCompat;
 use Laravel\Spark\Spark;
 
 class CheckCompatibility
 {
-    protected static $version = '0.1.17';
-
     /**
      * The console command instance.
      *
@@ -60,6 +59,6 @@ class CheckCompatibility
 
     public function supported($release)
     {
-        return version_compare(self::$version, $release, '>=');
+        return version_compare(HexavelSparkCompat::$version, $release, '>=');
     }
 }

@@ -4,13 +4,21 @@ Hexavel Spark is a simple compatibility library designed to work with [Laravel S
 the [Hexavel version of Laravel](https://github.com/peterfox/hexavel). This library still requires you to buy a license
 for Spark and is useless with out one.
 
+### Support
+
+This package is purely supported by myself [Peter Fox](mailto:peter.fox@peterfox.me) and using it could throw up issues
+which isn't covered by Spark itself due to the nature of using a different folder structure to Laravel as well as an
+off shoots of Laravel Elixir made for Hexavel. 
+
+Hexavel has never been meant for beginner users and you shouldn't use Hexavel unless you're sure of what you're doing.
+
 ### Install
 
 First create a Hexavel project per [the instructions](https://github.com/peterfox/hexavel/blob/master/README.md) and then
 download a copy of Spark and paste it into the ```support/packages``` directory of the project. You can then modify composer.json
 with
 
-```
+```json
     "repositories": [
             {
                 "type": "path",
@@ -21,15 +29,15 @@ with
 
 Then run:
 
-```
+```ssh
 composer require laravel/cashier 
-composer require laravel/spark 
+composer require laravel/spark:*@dev
 composer require hexavel/spark 
 ```
 
 Then add the Hexavel Spark provider to the ```config/app.php``` e.g.
  
-```
+```php
 /*
  * Application Service Providers...
  */
@@ -45,7 +53,7 @@ and have the stubs for Spark installed in the correction positions for Hexavel.
 
 Afterwards you just need to add the newly installed SparkServiceProvider.
 
-```
+```php
 /*
  * Application Service Providers...
  */
