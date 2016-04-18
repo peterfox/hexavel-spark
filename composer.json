@@ -1,0 +1,27 @@
+{
+    "name": "peterfox/hexavel-spark",
+    "description": "Provides compatibility between Hexavel and Laravel Spark",
+    "keywords": ["laravel", "spark", "hexavel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Peter Fox",
+            "email": "peter.fox@peterfox.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/spark": "*@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hexavel\\Spark\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}
