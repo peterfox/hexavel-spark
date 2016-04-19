@@ -10,5 +10,5 @@ namespace Hexavel\Spark;
 
 class HexavelSparkCompat
 {
-    public static $version = '0.1.19';
+    public static $version = '1.0.0';
 }
