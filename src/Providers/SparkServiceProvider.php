@@ -87,4 +87,20 @@ class SparkServiceProvider extends BaseProvider
 
         $this->registerServices();
     }
+
+    /**
+     * Register a view file namespace.
+     *
+     * @param  string  $path
+     * @param  string  $namespace
+     * @return void
+     */
+    protected function loadViewsFrom($path, $namespace)
+    {
+        if (is_dir($appPath = $this->app->basePath().'/support/resources/views/vendor/'.$namespace)) {
+            $this->app['view']->addNamespace($namespace, $appPath);
+        }
+
+        $this->app['view']->addNamespace($namespace, $path);
+    }
 }

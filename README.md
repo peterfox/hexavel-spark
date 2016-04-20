@@ -62,6 +62,9 @@ Laravel\Cashier\CashierServiceProvider::class,
 App\Laravel\Providers\SparkServiceProvider::class, // App Spark Provider
 ```
 
+Then the final step to a fully working Spark/Hexavel Project is to run ```npm install``` and then ```gulp``` to build
+all the javascript and less assets as well as ```bin/artisan migrate``` to install the database tables.
+
 ### Update
 
 To upgrade you should first run ```composer update``` to check for a new version of Hexavel Spark you can then update 
