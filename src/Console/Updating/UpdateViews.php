@@ -33,7 +33,7 @@ class UpdateViews extends BaseUpdate
      */
     protected function publishedViewPath($view)
     {
-        return base_path('support/resources/views/vendor/spark/'.$this->relativeViewPath($view));
+        return resource_path('views/vendor/spark/'.$this->relativeViewPath($view));
     }
 
     /**

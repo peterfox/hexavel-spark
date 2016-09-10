@@ -1,10 +1,6 @@
-var elixir = require('laravel-elixir');
-elixir.config.appPath = "src";
-elixir.config.viewPath = "support/resources/views";
-elixir.config.phpBinPath = "bin";
-elixir.config.assetsPath = "support/resources/assets/";
-elixir.config.testing.phpSpec.path = "support/spec";
-elixir.config.testing.behat.path = "support/features";
+const elixir = require('laravel-elixir');
+require('laravel-elixir-vue');
+require('hexavel-elixir-config');
 
 /*
  |--------------------------------------------------------------------------
@@ -19,9 +15,9 @@ elixir.config.testing.behat.path = "support/features";
 
 elixir(function(mix) {
     mix.less('app.less')
-       .browserify('app.js', null, null, { paths: 'vendor/laravel/spark/resources/assets/js' })
-       .copy('node_modules/sweetalert/dist/sweetalert.min.js', 'public/js/sweetalert.min.js')
-       .copy('node_modules/sweetalert/dist/sweetalert.css', 'public/css/sweetalert.css');
+        .browserify('app.js', null, null, { paths: 'vendor/laravel/spark/resources/assets/js' })
+        .copy('node_modules/sweetalert/dist/sweetalert.min.js', 'public/js/sweetalert.min.js')
+        .copy('node_modules/sweetalert/dist/sweetalert.css', 'public/css/sweetalert.css');
 });
 
 /*

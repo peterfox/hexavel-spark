@@ -16,5 +16,7 @@ class InstallHttp extends BaseInstall
     public function install()
     {
         (new Filesystem)->copyDirectory(SPARK_HEX_STUB_PATH.'/app/Laravel/Http', app_path('Laravel/Http'));
+
+        (new Filesystem)->copyDirectory(SPARK_STUB_PATH.'/routes', base_path('app/routes'));
     }
 }

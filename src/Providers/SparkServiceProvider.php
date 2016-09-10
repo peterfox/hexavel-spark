@@ -15,48 +15,6 @@ use Laravel\Spark\Providers\SparkServiceProvider as BaseProvider;
 class SparkServiceProvider extends BaseProvider
 {
     /**
-     * Define the view publishing configuration.
-     *
-     * @return void
-     */
-    public function defineViewPublishing()
-    {
-        $this->publishes([
-            SPARK_PATH.'/resources/views' => base_path('support/resources/views/vendor/spark'),
-        ], 'spark-views');
-    }
-
-    /**
-     * Define the asset publishing configuration.
-     *
-     * @return void
-     */
-    public function defineAssetPublishing()
-    {
-        $this->publishes([
-            SPARK_PATH.'/resources/assets/js' => base_path('support/resources/assets/js/spark'),
-        ], 'spark-js');
-
-        $this->publishes([
-            SPARK_PATH.'/resources/assets/less' => base_path('support/resources/assets/less/spark'),
-        ], 'spark-less');
-    }
-
-    /**
-     * Define the "full" publishing configuration.
-     *
-     * @return void
-     */
-    public function defineFullPublishing()
-    {
-        $this->publishes([
-            SPARK_PATH.'/resources/views' => base_path('support/resources/views/vendor/spark'),
-            SPARK_PATH.'/resources/assets/js' => base_path('support/resources/assets/js/spark'),
-            SPARK_PATH.'/resources/assets/less' => base_path('support/resources/assets/less/spark'),
-        ], 'spark-full');
-    }
-
-    /**
      * Register the service provider.
      *
      * @return void
