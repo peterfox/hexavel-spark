@@ -15,9 +15,6 @@ class InstallConfiguration extends BaseInstall
     {
         copy(SPARK_HEX_STUB_PATH.'/config/auth.php', config_path('auth.php'));
 
-        copy(SPARK_HEX_STUB_PATH.'/routes.php', base_path('app/routes.php'));
-        copy(SPARK_HEX_STUB_PATH.'/api.php', base_path('app/api.php'));
-
         copy(SPARK_HEX_STUB_PATH.'/config/'.$this->servicesFile().'.php', config_path('services.php'));
     }
 }

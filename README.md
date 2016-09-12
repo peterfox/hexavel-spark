@@ -20,19 +20,19 @@ with
 
 ```json
     "repositories": [
-            {
-                "type": "path",
-                "url": "./support/packages/spark"
-            }
+        {
+            "type": "composer",
+            "url": "https://spark-satis.laravel.com"
+        }
     ]        
 ```
 
 Then run:
 
 ```ssh
-composer require laravel/cashier 
-composer require laravel/spark:*@dev
-composer require hexavel/spark 
+composer require laravel/cashier:~7.0
+composer require laravel/spark:~2.0
+composer require hexavel/spark:~2.0
 ```
 
 Then add the Hexavel Spark provider to the ```config/app.php``` e.g.

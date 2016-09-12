@@ -11,6 +11,7 @@ use Hexavel\Spark\Console\Commands\UpdateViewsCommand;
 use Laravel\Spark\Console\Commands\StorePerformanceIndicatorsCommand;
 
 use Laravel\Spark\Providers\SparkServiceProvider as BaseProvider;
+use ReflectionClass;
 
 class SparkServiceProvider extends BaseProvider
 {
@@ -22,7 +23,11 @@ class SparkServiceProvider extends BaseProvider
     public function register()
     {
         if (! defined('SPARK_PATH')) {
-            define('SPARK_PATH', base_path('support/packages/spark'));
+            // Finds the Spark Path via the BaseProvider's location
+            $reflector = new \ReflectionClass(BaseProvider::class);
+            $dirname = dirname($reflector->getFileName());
+
+            define('SPARK_PATH', realpath($dirname.'/../../'));
         }
 
         if (! class_exists('Spark')) {
